@@ -61,6 +61,18 @@
               "reason": { "type": "string" }
             }
           }
+        },
+        "metas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["url", "new"],
+            "properties": {
+              "url": { "type": "string" },
+              "old": { "type": "string" },
+              "new": { "type": "string" }
+            }
+          }
         }
       }
     },

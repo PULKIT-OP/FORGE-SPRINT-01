@@ -23,4 +23,6 @@ Format:
 
 ## My log
 - `[13:30]` updated detector.py after test run of the pipeline
+- `[14:40]` made the fixed.py agent with fixer.md 
+
 

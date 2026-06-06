@@ -80,9 +80,9 @@ def _report_obj() -> dict:
     }
 
 
-def seo_set_fixes(titles=None, redirect_map=None) -> dict:
-    RUN["fixes"] = {"titles": titles or [], "redirect_map": redirect_map or []}
-    _emit("fixes", RUN["fixes"]); return {"titles": len(titles or []), "redirects": len(redirect_map or [])}
+def seo_set_fixes(titles=None, redirect_map=None, metas=None) -> dict:
+    RUN["fixes"] = {"titles": titles or [], "redirect_map": redirect_map or [], "metas": metas or []}
+    _emit("fixes", RUN["fixes"]); return {"titles": len(titles or []), "redirects": len(redirect_map or []), "metas": len(metas or [])}
 
 
 def seo_recommend(recommendations: list) -> dict:
@@ -193,9 +193,9 @@ def _run_mcp():
         return seo_detect()
 
     @mcp.tool()
-    def set_fixes(titles: list = None, redirect_map: list = None) -> dict:
+    def set_fixes(titles: list = None, redirect_map: list = None, metas: list = None) -> dict:
         """Attach the model-written title rewrites and the redirect map."""
-        return seo_set_fixes(titles, redirect_map)
+        return seo_set_fixes(titles, redirect_map, metas)
 
     @mcp.tool()
     def recommend(recommendations: list) -> dict:

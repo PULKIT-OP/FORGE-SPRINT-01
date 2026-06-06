@@ -5,7 +5,18 @@
 set -euo pipefail
 
 OUT="agent-log.md"
-PROJDIR="$HOME/.claude/projects"
+
+# Try to find the projects directory (handle both Unix and Windows/Git Bash home)
+if [ -d "$HOME/.claude/projects" ]; then
+  PROJDIR="$HOME/.claude/projects"
+elif [ -d "/c/Users/$USER/.claude/projects" ]; then
+  PROJDIR="/c/Users/$USER/.claude/projects"
+elif [ -d "/c/Users/$(whoami)/.claude/projects" ]; then
+  PROJDIR="/c/Users/$(whoami)/.claude/projects"
+else
+  # Fallback attempt to guess the path based on common Windows layouts
+  PROJDIR="/c/Users/PULKIT/.claude/projects"
+fi
 
 if [ ! -d "$PROJDIR" ]; then
   echo "No transcript directory found at $PROJDIR." > "$OUT"
