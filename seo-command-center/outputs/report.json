@@ -513,6 +513,6 @@
   "run_meta": {
     "model": "qwen3.5:9b",
     "model_calls": 0,
-    "duration_sec": 11.5
+    "duration_sec": 4.9
   }
 }
