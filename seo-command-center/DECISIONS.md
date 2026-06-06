@@ -22,4 +22,5 @@ Format:
 ---
 
 ## My log
-- `[--:--]` ...
+- `[13:30]` updated detector.py after test run of the pipeline
+

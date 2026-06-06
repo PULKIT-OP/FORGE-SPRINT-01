@@ -22,7 +22,7 @@ dashboard at localhost:7700, and outputs `outputs/report.json` + `outputs/report
 
 ## Architecture (keep it real)
 - `skills/seo-audit/SKILL.md` orchestrates. Sub-agents: ingest, auditor, fixer, reporter.
-- `seo/detector.py` = deterministic detectors (extend to the full rulebook — biggest score).
+- `seo/detector.py` = made all detectors as per now and tested it and finding 12 issues in test run
 - `mcp/server.py` = MCP tools + the live dashboard.
 
 ## Conventions
@@ -31,4 +31,4 @@ dashboard at localhost:7700, and outputs `outputs/report.json` + `outputs/report
 
 ## Things I have learned during the build (update this as you go)
 - (e.g. "SF leaves Title 1 blank on redirected URLs — must filter Status Code 200 first")
-- ...
+- After updating detector.py with all 17 parameters, in test run it detected only 12 issues. Then got to know crawler can make these and it will change everytime.
